@@ -1,0 +1,134 @@
+.home-page {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #fce4ec 0%,
+    #f8bbd0 40%,
+    #ffd6e7 70%,
+    #fce4ec 100%
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Content ── */
+.home-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ── Title ── */
+.home-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  font-weight: 700;
+  color: #880e4f;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  text-shadow:
+    2px 2px 6px rgba(136, 14, 79, 0.18),
+    0 0 40px rgba(244, 143, 177, 0.35);
+  animation: fadeUp 0.9s ease both;
+}
+
+/* ── Subtitle ── */
+.home-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.15rem, 2.8vw, 2rem);
+  font-style: italic;
+  color: #ad1457;
+  text-shadow: 1px 1px 3px rgba(173, 20, 87, 0.12);
+  animation: fadeUp 0.9s ease 0.25s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Buttons row ── */
+.home-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeUp 0.9s ease 0.5s both;
+}
+
+/* ── Yes button ── */
+.btn-yes {
+  padding: 0.95rem 2.8rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #e91e8c, #ad1457);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow:
+    0 4px 22px rgba(233, 30, 140, 0.38),
+    0 0 0 3px rgba(255, 255, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-yes:hover {
+  transform: scale(1.07) translateY(-2px);
+  box-shadow:
+    0 8px 32px rgba(233, 30, 140, 0.52),
+    0 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.btn-yes:active {
+  transform: scale(0.97);
+}
+
+/* ── No button — always fixed ── */
+.btn-no {
+  position: fixed;
+  z-index: 100;
+  padding: 0.95rem 2.2rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ad1457;
+  background: rgba(255, 255, 255, 0.82);
+  border: 2px solid #f48fb1;
+  border-radius: 50px;
+  cursor: not-allowed;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 16px rgba(244, 143, 177, 0.3);
+  transition:
+    left 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    top  0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn-no--moving {
+  animation: noWiggle 0.32s ease;
+}
+
+@keyframes noWiggle {
+  0%   { transform: rotate(0deg) scale(1); }
+  25%  { transform: rotate(-5deg) scale(1.05); }
+  50%  { transform: rotate(5deg) scale(1.05); }
+  75%  { transform: rotate(-2deg) scale(1.02); }
+  100% { transform: rotate(0deg) scale(1); }
+}
