@@ -24,7 +24,7 @@ export default function GiftPage() {
       {/* Section 2 — Reveal */}
       <section className="gift-section gift-section--reveal">
         <div className="gift-card">
-          <p className="gift-but-text">But, I've got this for as a collection of our memories together in this 3 years</p>
+          <p className="gift-but-text">But, I've got this as a collection of our memories together in this 3 years for you💖</p>
 
           {/* 16:9 image frame — drop gift-photo.jpg into /public */}
           <div className="gift-image-wrapper">
