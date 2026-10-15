@@ -11,7 +11,7 @@ export default function YesPage() {
 
       <div className="yes-content">
         <h1 className="yes-title">
-          Thank you for the yes babe 😘
+          Haha, Didn't give you a choice there, but still Thank you for the yes babe 😘
         </h1>
 
         <p className="yes-subtitle">
